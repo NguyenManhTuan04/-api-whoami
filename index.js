@@ -26,11 +26,11 @@ app.get('/api/hello', function (req, res) {
   res.json({ greeting: 'hello API' });
 });
 
-app.get("/api/whoami", (req, res) => {
+app.get('/api/whoami', (req, res) => {
   res.json({
     ipaddress: req.ip,
-    language: Headers("accept-language"),
-    software: Headers("accept-software")
+    language: req.headers["accept-language"],
+    software: req.headers["user-agent"]
   })
 })
 
